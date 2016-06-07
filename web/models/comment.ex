@@ -1,7 +1,7 @@
 defmodule BlogPhoenix.Comment do
   use BlogPhoenix.Web, :model
 
-  schema "comments" do
+  embedded_schema do
     field :name, :string
     field :content, :string
 
