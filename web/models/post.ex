@@ -1,10 +1,11 @@
 defmodule BlogPhoenix.Post do
   use BlogPhoenix.Web, :model
 
+  @primary_key {:id, :binary_id, autogenerate: true}
   schema "posts" do
     field :title, :string
     field :body, :string
-    field :comments, {:array, :map}
+    embeds_many :items, BlogPhoenix.Comment
 
     timestamps
   end
